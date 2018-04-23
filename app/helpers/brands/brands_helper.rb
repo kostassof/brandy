@@ -1,0 +1,2 @@
+module Brands::BrandsHelper
+end

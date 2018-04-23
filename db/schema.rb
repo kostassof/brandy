@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_23_110002) do
+ActiveRecord::Schema.define(version: 2018_04_23_123252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands_brands", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "vat_number"
+    t.string "website"
+    t.string "phone_number"
+    t.string "categories", default: [], null: false, array: true
+    t.string "facebook"
+    t.string "instagram"
+    t.string "youtube"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_brands_brands_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -41,4 +57,5 @@ ActiveRecord::Schema.define(version: 2018_04_23_110002) do
     t.index ["single_access_token"], name: "index_users_on_single_access_token", unique: true
   end
 
+  add_foreign_key "brands_brands", "users"
 end
