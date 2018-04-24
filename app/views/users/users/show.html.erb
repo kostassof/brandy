@@ -1,0 +1,21 @@
+<h2>User details</h2>
+
+<div class="card">
+  <div class="card-body">
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+    <%= @user.email %>
+  </div>
+</div>
+
+<h3>Brands</h3>
+<% @user.brands.each do |brand| %>
+<div class="card" style="width: 250px;">
+   <img class='image-top'><%= image_tag brand.avatar %>
+    <div class="card-body">
+    <%= brand.name %>
+    <%= brand.description %>
+    </div>
+  </div>
+<% end %>
+

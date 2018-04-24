@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_23_143556) do
+ActiveRecord::Schema.define(version: 2018_04_24_141925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,13 @@ ActiveRecord::Schema.define(version: 2018_04_23_143556) do
     t.string "vat_number"
     t.string "website"
     t.string "phone_number"
-    t.string "categories", default: [], null: false, array: true
     t.string "facebook"
     t.string "instagram"
     t.string "youtube"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "categories", default: [], array: true
     t.index ["user_id"], name: "index_brands_brands_on_user_id"
   end
 

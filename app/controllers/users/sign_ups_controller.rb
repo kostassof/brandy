@@ -16,14 +16,14 @@ class Users::SignUpsController < ApplicationController
   private
 
   def sign_up_params
-    params.require(:sign_up).permit(:user_first_name,
-                                    :user_last_name,
-                                    :user_email,
-                                    :user_crypted_password,
-                                    :user_password_salt,
-                                    :brand_name,
-                                    :brand_description,
-                                    brand_categories: [],
-                                    :brand_avatar)
+    params.require(:users_sign_up).permit(:user_first_name,
+                                          :user_last_name,
+                                          :user_email,
+                                          :user_crypted_password,
+                                          :user_password_salt,
+                                          :brand_name,
+                                          :brand_description,
+                                          :brand_avatar,
+                                          brand_categories: [])
   end
 end

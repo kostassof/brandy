@@ -1,0 +1,16 @@
+<%= simple_form_for @sign_up, url: sign_up_path do |f| %>
+  <h2>User</h2>
+    <%= f.input :user_first_name %>
+    <%= f.input :user_last_name %>
+    <%= f.input :user_email %>
+    <%= f.input :user_crypted_password %>
+    <%= f.input :user_password_salt %>
+
+  <h2>My brand</h2>
+    <%= f.input :brand_name %>
+    <%= f.input :brand_description, as: :text %>
+    <%= f.input :brand_categories, as: :array, collection: ["clothing","furniture","interior design"], input_html: { :multiple => true } %>
+    <%= f.input :brand_avatar, as: :file %>
+
+  <%= f.button :submit %>
+<% end %>
