@@ -1,0 +1,2 @@
+module Users::SignUpsHelper
+end

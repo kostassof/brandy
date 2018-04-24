@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   scope module: 'brands' do
     resources :brands
   end
+
+  scope module: 'users' do
+    resources :users, path: 'admin', as: 'admin', only: [:show, :update]
+    get '/sign_up', to: 'sign_ups#new', as: 'sign_up'
+    post '/sign_up', to: 'sign_ups#create'
+  end
 end
