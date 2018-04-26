@@ -27,7 +27,7 @@ class Users::SignUp
                                     description: brand_description,
                                     categories: brand_categories,
                                     avatar: brand_avatar,
-                                    user: @user)
+                                    admin: @user)
     end
   end
 end
