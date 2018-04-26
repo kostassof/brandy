@@ -9,7 +9,7 @@ class CreateBrandsAddresses < ActiveRecord::Migration[5.2]
       t.string :zip
       t.float :latitude
       t.float :longitude
-      t.references :brands, foreign_key: true
+      t.references :brand, foreign_key: true
 
       t.timestamps
     end

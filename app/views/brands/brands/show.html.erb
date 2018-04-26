@@ -1,2 +1,8 @@
 <%= @brand.name %>
 <%= @brand.description %>
+
+<% unless @brand.addresses.empty? %>
+  <h1>Location</h1>
+  <%= @brand.addresses %>
+<% end %>
+
