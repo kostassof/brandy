@@ -7,7 +7,7 @@ class Users::SignUpsController < ApplicationController
     @sign_up = Users::SignUp.new(sign_up_params)
 
     if @sign_up.save
-      redirect_to admin_path(@sign_up.user)
+      redirect_to root_path
     else
       render :new
     end

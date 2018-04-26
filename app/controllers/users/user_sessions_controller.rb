@@ -7,7 +7,7 @@ class Users::UserSessionsController < ApplicationController
     @user_session = Users::UserSession.new(user_session_params.to_h)
     if @user_session.save
       flash[:success] = "Welcome back!"
-      redirect_to root_path
+      redirect_to admin_path(current_user)
     else
       render :new
     end
