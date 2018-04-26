@@ -21,6 +21,8 @@ class Users::SignUpsController < ApplicationController
                                           :user_email,
                                           :user_crypted_password,
                                           :user_password_salt,
+                                          :user_password,
+                                          :user_password_confirmation,
                                           :brand_name,
                                           :brand_description,
                                           :brand_avatar,

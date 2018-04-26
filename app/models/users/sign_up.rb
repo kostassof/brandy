@@ -4,8 +4,8 @@ class Users::SignUp
   attr_accessor :user_first_name,
                 :user_last_name,
                 :user_email,
-                :user_crypted_password,
-                :user_password_salt,
+                :user_password,
+                :user_password_confirmation,
                 :brand_name,
                 :brand_description,
                 :brand_categories,
@@ -18,11 +18,11 @@ class Users::SignUp
 
   def save
     if valid?
-      @user = User.create(first_name: user_first_name,
+      @user = Users::User.create(first_name: user_first_name,
                           last_name: user_last_name,
                           email: user_email,
-                          crypted_password: user_crypted_password,
-                          password_salt: user_password_salt)
+                          password: user_password,
+                          password_confirmation: user_password_confirmation)
       @brand = Brands::Brand.create(name: brand_name,
                                     description: brand_description,
                                     categories: brand_categories,
